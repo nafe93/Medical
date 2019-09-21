@@ -63,8 +63,8 @@ erythrocytes_female = count_age(data_female['erythrocytes'], data_female['sex'])
 
 # print age
 print(f"Age of female is {round(age_female, 3)} and age of male is {round(age_male, 3)}")
-print(f"Age of female is {round(disease_age_female, 3)} and age of male is {round(disease_age_male, 3)}")
-print(f"Age of female is {round(erythrocytes_female, 3)} and age of male is {round(erythrocytes_male, 3)}")
+print(f"Disease age of female is {round(disease_age_female, 3)} and Disease  age of male is {round(disease_age_male, 3)}")
+print(f"Erythrocytes of female is {round(erythrocytes_female, 3)} and Erythrocytes of male is {round(erythrocytes_male, 3)}")
 
 # draw
 num_bins = 5
@@ -76,7 +76,7 @@ data_age_view = [data_male['age (years)'], data_female['age (years)']]
 draw_hist(data_age_view, num_bins, color, text_x='Age', text_y='Number')
 
 # draw hist of disease
-data_disease_view = [data_male['age of disease debute (years)'], data_female['age of disease debute (years)']]
+data_disease_view = [data_male_for_disease['age of disease debute (years)'], data_female_for_disease['age of disease debute (years)']]
 draw_hist(data_disease_view, num_bins, color, text_x='age of disease debute (years)', text_y='Number')
 
 # draw erythrocytes
