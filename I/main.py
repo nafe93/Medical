@@ -61,27 +61,48 @@ disease_age_female = count_age(data_female_for_disease['age of disease debute (y
 erythrocytes_male = count_age(data_male['erythrocytes'], data_male['sex'])
 erythrocytes_female = count_age(data_female['erythrocytes'], data_female['sex'])
 
+# hemoglobin
+hemoglobin_male = data_male['hemoglobin'].mean()
+hemoglobin_female = data_female['hemoglobin'].mean()
+
+# leukocytes
+leukocytes_male = data_male['leukocytes'].mean()
+leukocytes_female = data_female['leukocytes'].mean()
+
 # print age
 print(f"Age of female is {round(age_female, 3)} and age of male is {round(age_male, 3)}")
 print(f"Disease age of female is {round(disease_age_female, 3)} and Disease  age of male is {round(disease_age_male, 3)}")
 print(f"Erythrocytes of female is {round(erythrocytes_female, 3)} and Erythrocytes of male is {round(erythrocytes_male, 3)}")
+print(f"Hemoglobin of female is {round(hemoglobin_female, 3)} and Hemoglobin of male is {round(hemoglobin_male, 3)}")
+print(f"Leukocytes of female is {round(leukocytes_female, 3)} and Leukocytes of male is {round(leukocytes_male, 3)}")
 
 # draw
 num_bins = 5
 color = ['red', 'blue']
-names = ['male', 'femala']
+names = ['male', 'female']
 
 # draw hist of age
 data_age_view = [data_male['age (years)'], data_female['age (years)']]
 draw_hist(data_age_view, num_bins, color, text_x='Age', text_y='Number')
 
 # draw hist of disease
-data_disease_view = [data_male_for_disease['age of disease debute (years)'], data_female_for_disease['age of disease debute (years)']]
+data_disease_view = [data_male_for_disease['age of disease debute (years)'],
+                     data_female_for_disease['age of disease debute (years)']]
 draw_hist(data_disease_view, num_bins, color, text_x='age of disease debute (years)', text_y='Number')
 
 # draw erythrocytes
 data_erythrocytes_view = [data_male['erythrocytes'], data_female['erythrocytes']]
 draw_hist(data_erythrocytes_view, num_bins, color, text_x='erythrocytes', text_y='Number')
+
+# draw hemoglobin
+data_hemoglobin_view = [data_male['hemoglobin'], [data_female['hemoglobin']]]
+draw_hist(data_hemoglobin_view, num_bins, color, text_x='Hemoglobin', text_y='Number')
+
+# draw Leukocytes
+data_leukocytes_view = [data_male['leukocytes'], [data_female['leukocytes']]]
+draw_hist(data_leukocytes_view, num_bins, color, text_x='Leukocytes', text_y='Number')
+
+########################################################################################################################
 
 # draw bar of age
 values_age = [age_male, age_female]
@@ -94,3 +115,11 @@ draw_bar(values_disease, names, text_y='Average', color=color, text='Average of 
 # draw bar of erythrocytes
 values_erythrocytes = [erythrocytes_male, erythrocytes_female]
 draw_bar(values_erythrocytes, names, text_y='Average', color=color, text='Average of erythrocytes')
+
+# draw bar of hemoglobin
+values_hemoglobin = [hemoglobin_male, hemoglobin_female]
+draw_bar(values_hemoglobin, names, text_y='Average', color=color, text='Average of hemoglobin')
+
+# draw bar of Leukocytes
+values_leukocytes = [leukocytes_male, leukocytes_female]
+draw_bar(values_leukocytes, names, text_y='Average', color=color, text='Average of Leukocytes')
