@@ -71,12 +71,52 @@ hemoglobin_female = data_female['hemoglobin'].mean()
 leukocytes_male = data_male['leukocytes'].mean()
 leukocytes_female = data_female['leukocytes'].mean()
 
+# neutrophils type 1
+neutrophils_type_one_male = data_male['neutrophils type 1'].mean()
+neutrophils_type_one_female = data_female['neutrophils type 1'].mean()
+
+# neutrophils type 2
+neutrophils_type_two_male = data_male['neutrophils type 2'].mean()
+neutrophils_type_two_female = data_female['neutrophils type 2'].mean()
+
+# lymphocytes
+lymphocytes_male = data_male['lymphocytes'].mean()
+lymphocytes_female = data_female['lymphocytes'].mean()
+
+# eosinophils
+eosinophils_male = data_male['eosinophils'].mean()
+eosinophils_female = data_female['eosinophils'].mean()
+
+# basophils
+basophils_male = data_male["basophils"].mean()
+basophils_female = data_female["basophils"].mean()
+
+# monocytes
+monocytes_male = data_male["monocytes"].mean()
+monocytes_female = data_female["monocytes"].mean()
+
+# erythrocytes sedimentation rate
+erythrocytes_sedimentation_rate_male = data_male["erythrocytes sedimentation rate"].mean()
+erythrocytes_sedimentation_rate_female = data_female["erythrocytes sedimentation rate"].mean()
+
+########################################
+
 # print age
 print(f"Age of female is {round(age_female, 3)} and age of male is {round(age_male, 3)}")
 print(f"Disease age of female is {round(disease_age_female, 3)} and Disease  age of male is {round(disease_age_male, 3)}")
 print(f"Erythrocytes of female is {round(erythrocytes_female, 3)} and Erythrocytes of male is {round(erythrocytes_male, 3)}")
 print(f"Hemoglobin of female is {round(hemoglobin_female, 3)} and Hemoglobin of male is {round(hemoglobin_male, 3)}")
 print(f"Leukocytes of female is {round(leukocytes_female, 3)} and Leukocytes of male is {round(leukocytes_male, 3)}")
+print(f"Neutrophils type 1 of female is {round(neutrophils_type_one_female, 3)} and Neutrophils type 1 of male is {round(neutrophils_type_one_male, 3)}")
+print(f"Neutrophils type 2 of female is {round(neutrophils_type_two_female, 3)} and Neutrophils type 2 of male is {round(neutrophils_type_two_male, 3)}")
+print(f"lymphocytes of female is {round(lymphocytes_female, 3)} and lymphocytes of male is {round(lymphocytes_male, 3)}")
+print(f"eosinophils of female is {round(eosinophils_female, 3)} and eosinophils of male is {round(eosinophils_male, 3)}")
+print(f"basophils of female is {round(basophils_female, 3)} and basophils of male is {round(basophils_male, 3)}")
+print(f"monocytes of female is {round(monocytes_female, 3)} and monocytes of male is {round(monocytes_male, 3)}")
+print(f"erythrocytes sedimentation rate of female is {round(erythrocytes_sedimentation_rate_female, 3)} and erythrocytes sedimentation rate of male is {round(erythrocytes_sedimentation_rate_male, 3)}")
+
+
+############################################
 
 # draw
 num_bins = 5
@@ -104,6 +144,33 @@ draw_hist(data_hemoglobin_view, num_bins, color, text_x='Hemoglobin', text_y='Nu
 data_leukocytes_view = [data_male['leukocytes'], [data_female['leukocytes']]]
 draw_hist(data_leukocytes_view, num_bins, color, text_x='Leukocytes', text_y='Number')
 
+# draw neutrophils type 1
+data_neutrophils_one_view = [data_male['neutrophils type 1'], [data_female['neutrophils type 1']]]
+draw_hist(data_neutrophils_one_view, num_bins, color, text_x='neutrophils type 1', text_y='Number')
+
+# draw neutrophils type 2
+data_neutrophils_two_view = [data_male['neutrophils type 2'], [data_female['neutrophils type 2']]]
+draw_hist(data_neutrophils_two_view, num_bins, color, text_x='neutrophils type 2', text_y='Number')
+
+# draw lymphocytes
+data_lymphocytes_view = [data_male['lymphocytes'], [data_female['lymphocytes']]]
+draw_hist(data_lymphocytes_view, num_bins, color, text_x='lymphocytes', text_y='Number')
+
+# draw eosinophils
+data_eosinophils_view = [data_male['eosinophils'], [data_female['eosinophils']]]
+draw_hist(data_eosinophils_view, num_bins, color, text_x='eosinophils', text_y='Number')
+
+# draw basophils
+data_basophils_view = [data_male['basophils'], [data_female['basophils']]]
+draw_hist(data_basophils_view, num_bins, color, text_x='basophils', text_y='Number')
+
+# draw monocytes
+data_monocytes_view = [data_male['monocytes'], [data_female['monocytes']]]
+draw_hist(data_monocytes_view, num_bins, color, text_x='monocytes', text_y='Number')
+
+# draw erythrocytes_sedimentation_rate
+data_erythrocytes_sedimentation_rate_view = [data_male["erythrocytes sedimentation rate"], data_female["erythrocytes sedimentation rate"]]
+draw_hist(data_erythrocytes_sedimentation_rate_view, num_bins, color, text_x='erythrocytes sedimentation rate', text_y='Number')
 ########################################################################################################################
 
 # draw bar of age
@@ -125,3 +192,31 @@ draw_bar(values_hemoglobin, names, text_y='Average', color=color, text='Average 
 # draw bar of Leukocytes
 values_leukocytes = [leukocytes_male, leukocytes_female]
 draw_bar(values_leukocytes, names, text_y='Average', color=color, text='Average of Leukocytes')
+
+# draw bar of neutrophils type 1
+values_neutrophils = [neutrophils_type_one_male, neutrophils_type_one_female]
+draw_bar(values_neutrophils, names, text_y='Average', color=color, text='Average of neutrophils type 1')
+
+# draw bar of neutrophils type 2
+values_neutrophils_2 = [neutrophils_type_two_male, neutrophils_type_two_female]
+draw_bar(values_neutrophils_2, names, text_y='Average', color=color, text='Average of neutrophils type 2')
+
+# draw bar of lymphocytes
+values_lymphocytes = [lymphocytes_male, lymphocytes_female]
+draw_bar(values_lymphocytes, names, text_y='Average', color=color, text='Average of lymphocytes')
+
+# draw bar of eosinophils
+values_eosinophils = [eosinophils_male, eosinophils_female]
+draw_bar(values_eosinophils, names, text_y='Average', color=color, text='Average of eosinophils')
+
+# draw bar of basophils
+values_basophils = [basophils_male, basophils_female]
+draw_bar(values_basophils, names, text_y='Average', color=color, text='Average of basophils')
+
+# draw bar of monocytes
+values_basophils = [basophils_male, basophils_female]
+draw_bar(values_basophils, names, text_y='Average', color=color, text='Average of lymphocytes')
+
+# draw bar erythrocytes sedimentation rate
+values_erythrocytes_sedimentation_rate = [erythrocytes_sedimentation_rate_male, erythrocytes_sedimentation_rate_female]
+draw_bar(values_erythrocytes_sedimentation_rate, names, text_y='Average', color=color, text='Average erythrocytes sedimentation rate')
