@@ -18,6 +18,8 @@ def draw_hist(data, num_bins, color, type='vertical', stacked=False, density=Fal
     plt.hist(data, num_bins, color=color, alpha=0.5, orientation=type, stacked=stacked, density=density)
     plt.xlabel(text_x)
     plt.ylabel(text_y)
+    # plt.ylim(0, 1)
+    # plt.xlim(0, 1)
     plt.show()
 
 
