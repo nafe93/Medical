@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="053c9bfe-056c-4acb-9d4a-e410ce529238" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="053c9bfe-056c-4acb-9d4a-e410ce529238" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -177,12 +175,12 @@
       <workItem from="1569851102790" duration="3866000" />
       <workItem from="1569867287386" duration="11588000" />
       <workItem from="1569886427863" duration="323000" />
-      <workItem from="1569923421679" duration="298000" />
+      <workItem from="1569923421679" duration="872000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74049000" />
+    <option name="totallyTimeSpent" value="74623000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -194,7 +192,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0804904" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
