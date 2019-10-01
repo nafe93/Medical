@@ -143,9 +143,9 @@ erythrocytes_sedimentation_rate_female = data_female["erythrocytes sedimentation
 ########################################
 
 # print age
-print(data_male['erythrocytes sedimentation rate'].describe(), data_female['erythrocytes sedimentation rate'].describe())
-print("male: ", mean_confidence_interval_scipy(data_male['erythrocytes sedimentation rate']))
-print("female", mean_confidence_interval_scipy(data_female['erythrocytes sedimentation rate']))
+print(data_male['basophils'].describe(), data_female['basophils'].describe())
+print("male: ", mean_confidence_interval_scipy(data_male['basophils']))
+print("female", mean_confidence_interval_scipy(data_female['basophils']))
 print()
 
 print(f"Age of female is {round(age_female, 3)} and age of male is {round(age_male, 3)}")
@@ -168,7 +168,7 @@ print(f"erythrocytes sedimentation rate of female is {round(erythrocytes_sedimen
 num_bins = 10
 color = ['red', 'blue']
 names = ['male', 'female']
-"""
+
 # draw hist of age
 data_age_view = [data_male['age (years)'], data_female['age (years)']]
 draw_hist(data_age_view, num_bins, color, text_x='Age', text_y='Number')
@@ -213,16 +213,15 @@ draw_hist(data_basophils_view, num_bins, color, text_x='basophils', text_y='Numb
 # draw monocytes
 data_monocytes_view = [data_male['monocytes'], [data_female['monocytes']]]
 draw_hist(data_monocytes_view, num_bins, color, text_x='monocytes', text_y='Number')
-"""
+
 # draw erythrocytes_sedimentation_rate
 data_erythrocytes_sedimentation_rate_view = [data_male["erythrocytes sedimentation rate"], data_female["erythrocytes sedimentation rate"]]
 draw_hist(data_erythrocytes_sedimentation_rate_view, num_bins, color, text_x='erythrocytes sedimentation rate', text_y='Number')
 ########################################################################################################################
-"""
-"""
+
 
 text_for_bar_y_name = 'Median'
-"""
+
 # draw bar of age
 values_age = [age_male, age_female]
 values_age_error = [mean_confidence_interval_scipy(data_male['age (years)']),
@@ -288,12 +287,10 @@ values_monocytes = [monocytes_male, monocytes_female]
 values_monocytes_error =[mean_confidence_interval_scipy(data_male['basophils']),
                     mean_confidence_interval_scipy(data_female['basophils'])]
 draw_bar(values_monocytes, names, text_y=text_for_bar_y_name, color=color, text=text_for_bar_y_name + ' of monocytes', error=values_monocytes_error)
-"""
+
 # draw bar erythrocytes sedimentation rate
 values_erythrocytes_sedimentation_rate = [erythrocytes_sedimentation_rate_male, erythrocytes_sedimentation_rate_female]
 values_erythrocytes_sedimentation_rate_error =[mean_confidence_interval_scipy(data_male['erythrocytes sedimentation rate']),
                     mean_confidence_interval_scipy(data_female['erythrocytes sedimentation rate'])]
 draw_bar(values_erythrocytes_sedimentation_rate, names, text_y=text_for_bar_y_name, color=color,
          text=text_for_bar_y_name + ' erythrocytes sedimentation rate', error=values_erythrocytes_sedimentation_rate_error)
-"""
-"""
