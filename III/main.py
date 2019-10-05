@@ -33,15 +33,28 @@ def count_age(data_age, data_sex):
 
 
 # draw plot
-def draw_plot(x, y):
+def draw_plot(male, female):
 
-    plt.plot([0, 10], [0, 10])
-    plt.scatter(x, y, s=300, color='red')
+    ax = plt.gca()
+    ax.cla()  # clear things for fresh plot
 
-    plt.title("Tracer un nuage de points devant une droite")
+    # plt.plot([male.min(), male.mean()], [male.mean(), male.mean()], color='green')
+    circle1 = plt.Circle((50, 60), 0.5, color='y')
+
+
+    ax.add_artist(circle1)
+
+
+    plt.scatter(male.mean(), male.mean(), s=300, color='red')
+    plt.scatter(female.mean(), female.mean(), s=300, color='blue')
+
+    plt.scatter(male, male.index.tolist(), s=10, color='red')
+    plt.scatter(female, female.index.tolist(), s=10, color='blue')
+
+    plt.title("example")
     plt.grid()
 
-    plt.savefig("scatter_points_order_01.png", bbox_inches='tight')
+    # plt.savefig("scatter_points_order_01.png", bbox_inches='tight')
     plt.show()
     plt.close()
 
@@ -142,6 +155,7 @@ erythrocytes_sedimentation_rate_female = data_female["erythrocytes sedimentation
 
 ########################################
 
+
 # print age
 print(data_male['basophils'].describe(), data_female['basophils'].describe())
 print("male: ", mean_confidence_interval_scipy(data_male['basophils']))
@@ -161,6 +175,10 @@ print(f"basophils of female is {round(basophils_female, 3)} and basophils of mal
 print(f"monocytes of female is {round(monocytes_female, 3)} and monocytes of male is {round(monocytes_male, 3)}")
 print(f"erythrocytes sedimentation rate of female is {round(erythrocytes_sedimentation_rate_female, 3)} and erythrocytes sedimentation rate of male is {round(erythrocytes_sedimentation_rate_male, 3)}")
 
+############################################
+draw_plot(data_male['age (years)'], data_female['age (years)'])
+
+"""
 
 ############################################
 
@@ -294,3 +312,5 @@ values_erythrocytes_sedimentation_rate_error =[mean_confidence_interval_scipy(da
                     mean_confidence_interval_scipy(data_female['erythrocytes sedimentation rate'])]
 draw_bar(values_erythrocytes_sedimentation_rate, names, text_y=text_for_bar_y_name, color=color,
          text=text_for_bar_y_name + ' erythrocytes sedimentation rate', error=values_erythrocytes_sedimentation_rate_error)
+
+"""
