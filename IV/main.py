@@ -36,9 +36,9 @@ for i in range(120):
 print()
 
 two_one_groups = list()
+my_randoms = random.choices(population=[0, 1], weights=[0.33333, 0.66666], k=120)
+my_randoms_2 = random.choices(population=[55, 67], weights=[0.33333, 0.66666], k=120)
 for i in range(120):
-    my_randoms   = random.choices(population=[0, 1], weights=[0.33333, 0.66666], k=120)
-    my_randoms_2 = random.choices(population=[55, 67], weights=[0.33333, 0.66666], k=120)
     two_one_groups.append([f"patient {i + 1}", my_randoms[i], my_randoms_2[i]])
 
 print(*two_one_groups, sep='\n')
